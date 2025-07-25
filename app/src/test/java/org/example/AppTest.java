@@ -6,9 +6,33 @@ package org.example;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class AppTest {
-    @Test void appHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+public class AppTest {
+
+    App stats = new App();
+    int[] testArray = {4, 2, 8, 6};
+
+    @Test
+    public void testMaximum() {
+        assertEquals(8, stats.maximumUsingForLoop(testArray));
+        assertEquals(8, stats.maximumUsingStream(testArray));
+    }
+
+    @Test
+    public void testMinimum() {
+        assertEquals(2, stats.minimumUsingForLoop(testArray));
+        assertEquals(2, stats.minimumUsingStream(testArray));
+    }
+
+    @Test
+    public void testSum() {
+        assertEquals(20, stats.sumUsingForLoop(testArray));
+        assertEquals(20, stats.sumUsingStream(testArray));
+    }
+
+    @Test
+    public void testAverage() {
+        assertEquals(5, stats.averageUsingForLoop(testArray));
+        assertEquals(5, stats.averageUsingStream(testArray));
     }
 }
+
